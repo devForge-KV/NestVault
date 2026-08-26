@@ -13,6 +13,8 @@ import {
 import axios from "axios";
 import Logo from "./Logo";
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "";
+
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [user, setUser] = useState(null);
@@ -21,7 +23,7 @@ function Navbar() {
   const navigate = useNavigate();
   const fetchUser = async () => {
     try {
-      const response = await axios.get("/api/auth/me", {
+      const response = await axios.get(`${API_BASE_URL}/api/auth/me`, {
         withCredentials: true,
       });
       if (response.data.success) {
@@ -50,8 +52,9 @@ function Navbar() {
   }, []);
 
   const handleLogout = async () => {
+   const handleLogout = async () => {
     try {
-      await axios.post("/api/auth/logout", {}, { withCredentials: true });
+      await axios.post(`${API_BASE_URL}/api/auth/logout`, {}, { withCredentials: true });
       setUser(null);
       setIsDropdownOpen(false);
       setIsOpen(false);
@@ -294,6 +297,7 @@ function Navbar() {
       )}
     </section>
   );
+}
 }
 
 export default Navbar;

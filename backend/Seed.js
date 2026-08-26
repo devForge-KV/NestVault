@@ -1,8 +1,12 @@
 import mongoose from "mongoose";
+import dotenv from "dotenv";
 import Property from "./models/Property.js";
 import { Agent } from "./models/Agent.js";
+
+dotenv.config();
+
 mongoose
-  .connect("mongodb://127.0.0.1:27017/realestate")
+  .connect(process.env.MONGO_URI || "mongodb://127.0.0.1:27017/realestate")
   .then(() => console.log("MongoDB Connected for Seeding..."))
   .catch((err) => console.log("DB Connection Error:", err.message));
 

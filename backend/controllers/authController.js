@@ -4,6 +4,18 @@ import jwt from "jsonwebtoken";
 
 const JWT_SECRET = process.env.JWT_SECRET || "nestvault_secret_key_123";
 
+const getCookieOptions = (req) => {
+  const isHttps =
+    req.secure || req.headers["x-forwarded-proto"]?.split(",")[0] === "https";
+
+  return {
+    httpOnly: true,
+    secure: isHttps,
+    sameSite: isHttps ? "none" : "lax",
+    maxAge: 7 * 24 * 60 * 60 * 1000,
+  };
+};
+
 export const registerUser = async (req, res) => {
   try {
     const { name, email, phone, password, receiveUpdates } = req.body;
@@ -43,12 +55,7 @@ export const registerUser = async (req, res) => {
 
     return res
       .status(201)
-      .cookie("token", token, {
-        httpOnly: true,
-        secure: false,
-        sameSite: "lax",
-        maxAge: 7 * 24 * 60 * 60 * 1000,
-      })
+      .cookie("token", token, getCookieOptions(req))
       .json({
         success: true,
         message: "Account created successfully",
@@ -99,12 +106,7 @@ export const signin = async (req, res) => {
 
     return res
       .status(200)
-      .cookie("token", token, {
-        httpOnly: true,
-        secure: false,
-        sameSite: "lax",
-        maxAge: 7 * 24 * 60 * 60 * 1000,
-      })
+      .cookie("token", token, getCookieOptions(req))
       .json({
         success: true,
         message: "Signed in successfully",
@@ -166,11 +168,7 @@ export const getMe = async (req, res) => {
 
 export const LogoutUser = async (req, res) => {
   try {
-    res.clearCookie("token", {
-      httpOnly: true,
-      sameSite: "lax",
-      secure: false,
-    });
+    res.clearCookie("token", getCookieOptions(req));
     res.status(200).json({ success: true, message: "Logged out Successfully" });
   } catch {
     res.status(500).json({ success: false, message: "Logout failed" });

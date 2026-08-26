@@ -6,6 +6,8 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "";
+
 const SignInForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [serverError, setServerError] = useState("");
@@ -23,7 +25,7 @@ const SignInForm = () => {
       name: "Google",
       icon: FcGoogle,
       label: "Continue with Google",
-      link: "http://localhost:5000/api/auth/google",
+      link: `${API_BASE_URL}/api/auth/google`,
     },
     {
       id: "facebook",
@@ -31,34 +33,30 @@ const SignInForm = () => {
       icon: FaFacebook,
       iconColor: "text-[#1877F2]",
       label: "Continue with Facebook",
-      link: "http://localhost:5000/api/auth/facebook",
+      link: `${API_BASE_URL}/api/auth/facebook`,
     },
   ];
 
   const onSubmit = async (data) => {
     try {
       setServerError("");
-      console.log("Submitting to port 3000:", data);
 
       const response = await axios.post(
-        "/api/auth/signin",
+        `${API_BASE_URL}/api/auth/signin`,
         {
           email: data.email,
           password: data.password,
         },
-        { withCredentials: true },
+        { withCredentials: true }
       );
-
-      console.log("Login Success Response:", response.data);
 
       if (response.data.success) {
         window.dispatchEvent(new Event("authChange"));
         navigate("/");
       }
     } catch (error) {
-      console.log("Real Server Error Object:", error.response);
       setServerError(
-        error.response?.data?.message || "Invalid credentials or Server error",
+        error.response?.data?.message || "Invalid credentials or Server error"
       );
     }
   };

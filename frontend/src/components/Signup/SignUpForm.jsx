@@ -5,6 +5,8 @@ import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 import { LuUser, LuMail, LuEye, LuEyeOff, LuLoader } from "react-icons/lu";
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "";
+
 const SignUpForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -25,7 +27,7 @@ const SignUpForm = () => {
       name: "Google",
       icon: FcGoogle,
       label: "Continue with Google",
-      link: "http://localhost:5000/api/auth/google",
+      link: `${API_BASE_URL}/api/auth/google`,
     },
     {
       id: "facebook",
@@ -33,7 +35,7 @@ const SignUpForm = () => {
       icon: FaFacebook,
       iconColor: "text-[#1877F2]",
       label: "Continue with Facebook",
-      link: "http://localhost:5000/api/auth/facebook",
+      link: `${API_BASE_URL}/api/auth/facebook`,
     },
   ];
 
