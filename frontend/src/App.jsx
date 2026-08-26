@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import axios from "axios";
 import Navbar from "./components/Common/Navbar";
 import BottomNav from "./components/Common/BottomNav";
 import Home from "./pages/Home";
@@ -15,6 +14,11 @@ import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
 import Profile from "./pages/Profile";
 import Wishlist from "./pages/Wishlist";
+import axios from "axios";
+
+
+axios.defaults.baseURL = import.meta.env.VITE_API_BASE_URL || "";
+axios.defaults.withCredentials = true;
 
 function App() {
   const [serverMessage, setServerMessage] = useState("Connecting to server...");
