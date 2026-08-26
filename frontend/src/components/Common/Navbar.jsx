@@ -52,7 +52,6 @@ function Navbar() {
   }, []);
 
   const handleLogout = async () => {
-   const handleLogout = async () => {
     try {
       await axios.post(`${API_BASE_URL}/api/auth/logout`, {}, { withCredentials: true });
       setUser(null);
@@ -297,7 +296,6 @@ function Navbar() {
       )}
     </section>
   );
-}
 }
 
 export default Navbar;
