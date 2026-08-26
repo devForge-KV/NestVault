@@ -42,9 +42,7 @@ const PropertyListingContent = () => {
         if (filter?.status?.forRent) queryParams.append("forRent", "true");
         if (sortBy) queryParams.append("sortBy", sortBy);
 
-        const response = await fetch(
-          `${API_BASE_URL}/api/properties?${queryParams.toString()}`
-        );
+        const response = await fetch(`${API_BASE_URL}/api/properties?${queryParams.toString()}`);
         if (!response.ok) throw new Error("Failed to fetch");
 
         const result = await response.json();
