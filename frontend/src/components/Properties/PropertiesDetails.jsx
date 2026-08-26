@@ -11,6 +11,8 @@ import PropertyDetailsTable from "./PropertyDetailsTable";
 import SimilarProperties from "./SimilarProperties";
 import Loading from "../Common/Loading";
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "";
+
 const PropertiesDetails = () => {
   const { id } = useParams();
   const [property, setProperty] = useState(null);
@@ -34,7 +36,7 @@ const PropertiesDetails = () => {
       try {
         setLoading(true);
         setError("");
-        const response = await fetch(`/api/properties/${id}`);
+        const response = await fetch(`${API_BASE_URL}/api/properties/${id}`);
         if (!response.ok) throw new Error("Failed to fetch property details");
 
         const result = await response.json();

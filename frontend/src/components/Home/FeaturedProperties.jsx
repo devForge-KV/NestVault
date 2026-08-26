@@ -4,6 +4,8 @@ import { NavLink } from "react-router-dom";
 import { useWishlist } from "../../hooks/useWishlist";
 import Loading from "../Common/Loading";
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "";
+
 const FeaturedProperties = () => {
   const [featuredProperties, setFeaturedProperties] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -13,7 +15,7 @@ const FeaturedProperties = () => {
   useEffect(() => {
     const fetchProperties = async () => {
       try {
-        const res = await fetch("/api/properties");
+        const res = await fetch(`${API_BASE_URL}/api/properties`);
 
         if (!res.ok) {
           throw new Error("Unable to load properties");

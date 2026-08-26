@@ -26,6 +26,9 @@ import {
 } from "react-icons/fi";
 import { LuBuilding2 } from "react-icons/lu";
 
+
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "";
+
 const AgentDetail = () => {
   const { id } = useParams();
   const [agent, setAgent] = useState(null);
@@ -36,7 +39,7 @@ const AgentDetail = () => {
     window.scrollTo(0, 0);
     setLoading(true);
 
-    fetch(`/api/agents/${id}`)
+    fetch(`${API_BASE_URL}/api/agents/${id}`)
       .then((res) => res.json())
       .then((resData) => {
         if (resData.success) {
@@ -49,7 +52,7 @@ const AgentDetail = () => {
         setLoading(false);
       });
 
-    fetch("/api/agents")
+   fetch(`${API_BASE_URL}/api/agents`)
       .then((res) => res.json())
       .then((resData) => {
         if (resData.success && Array.isArray(resData.data)) {

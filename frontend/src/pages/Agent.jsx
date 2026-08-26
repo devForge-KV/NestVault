@@ -5,13 +5,15 @@ import AgentFilter from "../components/Agents/AgentFilter";
 import AgentCard from "../components/Agents/AgentCard";
 import JoinTeam from "../components/Agents/JoinTeam";
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "";
+
 const Agent = () => {
   const [agents, setAgents] = useState([]);
   const [filteredAgents, setFilteredAgents] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/api/agents")
+    fetch(`${API_BASE_URL}/api/agents`)
       .then((res) => res.json())
       .then((data) => {
         const agentsData = data.data || data || [];

@@ -6,6 +6,8 @@ import FilterContext, { FilterProvider } from "../../hooks/FilterContext";
 import { useWishlist } from "../../hooks/useWishlist";
 import Loading from "../Common/Loading";
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "";
+
 const PROPERTIES_PER_PAGE = 8;
 
 const PropertyListingContent = () => {
@@ -41,7 +43,7 @@ const PropertyListingContent = () => {
         if (sortBy) queryParams.append("sortBy", sortBy);
 
         const response = await fetch(
-          `/api/properties?${queryParams.toString()}`,
+          `${API_BASE_URL}/api/properties?${queryParams.toString()}`
         );
         if (!response.ok) throw new Error("Failed to fetch");
 

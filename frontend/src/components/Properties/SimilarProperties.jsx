@@ -5,6 +5,8 @@ import PropertyCard from "../Common/PropertiesCard";
 import { useWishlist } from "../../hooks/useWishlist";
 import Loading from "../Common/Loading";
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "";
+
 const SimilarProperties = ({ currentPropertyId, category }) => {
   const [similarProperties, setSimilarProperties] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -14,7 +16,7 @@ const SimilarProperties = ({ currentPropertyId, category }) => {
     const fetchSimilar = async () => {
       try {
         setLoading(true);
-        const res = await fetch("/api/properties");
+        const res = await fetch(`${API_BASE_URL}/api/properties`);
         if (!res.ok) throw new Error("Failed to fetch similar properties");
 
         const result = await res.json();
