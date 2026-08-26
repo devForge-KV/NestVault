@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Common/Navbar";
 import BottomNav from "./components/Common/BottomNav";
 import Home from "./pages/Home";
@@ -21,6 +21,30 @@ axios.defaults.baseURL = import.meta.env.VITE_API_BASE_URL || "";
 axios.defaults.withCredentials = true;
 
 function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    const routeTitles = {
+      "/": "NestVault",
+      "/properties": "NestVault | Properties",
+      "/aboutus": "NestVault | About Us",
+      "/agents": "NestVault | Agents",
+      "/contactus": "NestVault | Contact Us",
+      "/signup": "NestVault | Sign Up",
+      "/signin": "NestVault | Sign In",
+      "/profile": "NestVault | Profile",
+      "/wishlist": "NestVault | Saved Properties",
+    };
+
+    if (location.pathname.startsWith("/properties/")) {
+      document.title = "NestVault | Property Details";
+    } else if (location.pathname.startsWith("/agents/")) {
+      document.title = "NestVault | Agent Details";
+    } else {
+      document.title = routeTitles[location.pathname] || "NestVault";
+    }
+  }, [location]);
+
   const [serverMessage, setServerMessage] = useState("Connecting to server...");
   useEffect(() => {
     axios
