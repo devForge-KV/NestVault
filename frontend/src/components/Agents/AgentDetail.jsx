@@ -372,18 +372,18 @@ const AgentDetail = () => {
       <div className="space-y-6 mt-10">
         <div className="flex items-center justify-between">
           <div>
-            <h2 className="text-white font-bold text-xl sm:text-3xl">
+            <h2 className="text-white font-bold text-base sm:text-3xl">
               Explore Other <span className="text-[#f59e0b]">Top Agents</span>
             </h2>
-            <p className="text-gray-400 text-xs mt-1">
-              Connect with other verified real estate specialists on NestVault
+            <p className="text-gray-400 text-sm mt-1 hidden lg:block">
+              Connect with other verified real estate specialists on <span className="text-[#f59e0b]">NestVault</span>
             </p>
           </div>
           <Link
             to="/agents"
-            className="text-[#f59e0b] hover:underline text-xs font-semibold"
+            className="text-[#f59e0b] hover:underline text-xs lg:text-base font-semibold"
           >
-            View All Agents →
+            View All Properties→
           </Link>
         </div>
 

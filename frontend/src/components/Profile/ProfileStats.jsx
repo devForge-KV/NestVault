@@ -7,7 +7,7 @@ import {
 } from "react-icons/fa";
 
 const ProfileStats = ({ user }) => {
-  const firstName = user?.name ? user.name.split(" ")[0] : "User";
+  const firstName = user?.name ? user.name.split(" ")[0] : "";
   const savedCount = user?.wishlist?.length || 0;
   const inquiriesCount = user?.inquiries?.length || 0;
   const alertsCount = user?.propertyAlerts?.length || 0;
@@ -44,7 +44,7 @@ const ProfileStats = ({ user }) => {
     <div className="space-y-6 pt-10">
       {}
       <div>
-        <h1 className="text-2xl sm:text-3xl font-thine text-white flex items-center gap-2">
+        <h1 className="text-2xl sm:text-3xl font-semibold text-white flex items-center gap-2">
           Welcome back,<span className="text-[#f59e0b]"> {firstName}!</span>{" "}
           <span className="animate-pulse">👋</span>
         </h1>

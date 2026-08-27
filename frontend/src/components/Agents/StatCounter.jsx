@@ -52,7 +52,7 @@ const StatCounter = () => {
 
                 {}
                 <div className="flex flex-col">
-                  <h4 className="text-lg sm:text-2xl font-bold text-[#f59e0b] tracking-wide">
+                  <h4 className="text-lg sm:text-xl font-semibold text-[#f59e0b] tracking-wide">
                     {item.title}
                   </h4>
                   <p className="text-xs sm:text-sm text-gray-400 mt-0.5 leading-tight font-medium">

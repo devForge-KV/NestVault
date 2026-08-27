@@ -4,7 +4,7 @@ import agentHeroImage from "../../assets/Images/AgenetsHero.jpeg";
 const AgentHero = () => {
   return (
     <section className="w-full relative">
-      <div className="w-full h-[30vh] sm:h-[40vh] lg:h-[65vh] relative">
+      <div className="w-full h-[40vh] sm:h-[40vh] lg:h-[65vh] relative">
         <img
           src={agentHeroImage}
           alt="Property Banner"
@@ -16,8 +16,8 @@ const AgentHero = () => {
             {}
             <div className="flex flex-col items-start gap-2 sm:gap-3 max-w-xl">
               <h1 className="text-2xl sm:text-4xl md:text-5xl font-serif font-light tracking-wide leading-tight text-white">
-                Contact Our <br /> Expert{" "}
-                <span className="text-[#f59e0b]">Us</span>
+                Meet Our <br /> Expert{" "}
+                <span className="text-[#f59e0b]">Agents</span>
               </h1>
 
               <p className="text-xs sm:text-sm text-gray-400 font-medium">

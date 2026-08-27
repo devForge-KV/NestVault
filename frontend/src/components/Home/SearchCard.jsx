@@ -45,7 +45,7 @@ const SearchCard = () => {
   };
 
   return (
-    <div className="absolute inset-x-0  bottom-45 lg:-bottom-15 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="absolute inset-x-0  bottom-30 lg:-bottom-15 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="bg-[#0a0c10]/80 backdrop-blur-md border border-gray-800 rounded-2xl p-4 sm:p-6 shadow-2xl">
         {}
         <div className="flex items-center justify-between border-b border-gray-800/80 pb-3 mb-5">
@@ -122,10 +122,10 @@ const SearchCard = () => {
           ))}
           <button
             onClick={handleSearch}
-            className="col-span-2 lg:col-span-1 w-full bg-[#f59e0b] hover:bg-[#d4af37] text-gray-950 font-semibold py-2.5 px-4 rounded-xl flex items-center justify-center gap-2 transition-all active:scale-95"
+            className="col-span-1 lg:col-span-1 w-full bg-[#f59e0b] hover:bg-[#d4af37] text-gray-950 font-semibold py-2.5 px-4 rounded-xl flex items-center justify-center gap-2 transition-all active:scale-95"
           >
             <Search className="w-4 h-4" />
-            <span>Search {activeTab}</span>
+            <span>Search </span>
           </button>
         </div>
       </div>

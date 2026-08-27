@@ -25,7 +25,7 @@ const SignUpHero = () => {
   ];
 
   return (
-    <section className="w-full relative h-full min-h-[720px] rounded-[28px] overflow-hidden flex flex-col justify-between p-8 sm:p-12 border border-white/10 shadow-2xl">
+    <section className="w-full relative h-full min-h-[720px] rounded-[28px] overflow-hidden flex flex-col justify-between p-12 sm:p-12 border border-white/10 shadow-2xl">
       {}
       <img
         src="https://plus.unsplash.com/premium_photo-1682377521590-bc565126cb4d?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"

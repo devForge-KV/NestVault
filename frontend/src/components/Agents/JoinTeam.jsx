@@ -37,7 +37,7 @@ const JoinTeam = () => {
   ];
 
   return (
-    <section className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <section className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
       <div className="bg-[#0b0f17] border border-white/10 rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 shadow-2xl items-center">
         {}
         <div className="lg:col-span-8 p-8 sm:p-10 md:p-12">

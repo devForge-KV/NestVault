@@ -16,7 +16,7 @@ const ProfileBioCard = ({ user }) => {
   };
   const avatarSrc =
     user?.avatar ||
-    `https://ui-avatars.com/api/?name=${encodeURIComponent(user?.name || "User")}&background=f59e0b&color=000&bold=true`;
+    `https://ui-avatars.com/api/?name=${encodeURIComponent(user?.name || "")}&background=f59e0b&color=000&bold=true`;
 
   return (
     <div className="bg-[#0a0d14]/90 border border-white/10 rounded-2xl p-6 sm:p-7 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
@@ -35,7 +35,7 @@ const ProfileBioCard = ({ user }) => {
         <div className="space-y-2.5 w-full">
           <div className="flex items-center gap-2.5 flex-wrap">
             <h2 className="text-xl sm:text-2xl font-black text-white">
-              {user?.name || "John Doe"}
+              {user?.name || ""}
             </h2>
             {user?.isVerified && (
               <span className="px-2 py-0.5 rounded-md text-[10px] font-bold bg-[#f59e0b]/20 text-[#f59e0b] border border-[#f59e0b]/30">

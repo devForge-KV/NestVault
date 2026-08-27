@@ -8,7 +8,6 @@ const Properties = () => {
   return (
     <>
       <PropertieHome />
-
       <FilterProvider>
         <PropertyListing />
       </FilterProvider>

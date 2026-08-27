@@ -36,11 +36,11 @@ const featuresData = [
 const FeaturesBar = () => {
   return (
     <div className="w-full  max-w-7xl mx-auto bg-[#0a0c10]/90 backdrop-blur-md border border-gray-800/80 rounded-2xl p-2 sm:p-8 shadow-2xl">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 py-4">
         {featuresData.map((item) => {
           const IconComponent = item.icon;
           return (
-            <div key={item.id} className="flex items-start gap-4">
+            <div key={item.id} className="flex items-start gap-4 ">
               {}
               <div className="w-16 h-16 rounded-full bg-[#292927] border border-gray-800/80 flex items-center justify-center shrink-0">
                 <IconComponent className="w-8 h-8 text-[#f59e0b]" />

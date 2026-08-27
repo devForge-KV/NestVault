@@ -35,7 +35,6 @@ const AgentReviews = ({ agentName }) => {
 
   return (
     <div className="space-y-6 mt-12 mb-8">
-      {}
       <div className="flex items-center justify-between">
         <h2 className="text-white text-xl sm:text-3xl  font-medium">
           What Clients Say About{" "}
@@ -43,12 +42,11 @@ const AgentReviews = ({ agentName }) => {
             {firstName || "Agent"}
           </span>
         </h2>
-        <button className="text-[#f59e0b] hover:text-[#d97706] text-xs font-semibold underline underline-offset-4 transition-colors">
+        <button className="text-[#f59e0b] hover:text-[#d97706] text-xs font-thine underline underline-offset-4 transition-colors">
           View All Reviews
         </button>
       </div>
 
-      {}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
         {reviews.map((item) => (
           <div
@@ -56,7 +54,6 @@ const AgentReviews = ({ agentName }) => {
             className="bg-[#0c0f17] border border-white/10 rounded-2xl p-6 flex flex-col justify-between relative hover:border-[#f59e0b]/30 transition-all duration-300"
           >
             <div>
-              {}
               <div className="flex items-center gap-3.5 mb-4">
                 <img
                   src={item.image}
@@ -71,7 +68,6 @@ const AgentReviews = ({ agentName }) => {
                 </div>
               </div>
 
-              {}
               <div className="flex items-center gap-2 mb-4">
                 <div className="flex text-[#f59e0b] gap-0.5">
                   {[...Array(5)].map((_, i) => (
@@ -83,13 +79,11 @@ const AgentReviews = ({ agentName }) => {
                 </span>
               </div>
 
-              {}
               <p className="text-gray-300 text-xs leading-relaxed">
                 {item.review}
               </p>
             </div>
 
-            {}
             <div className="flex justify-end mt-4">
               <FaQuoteRight className="text-[#f59e0b] w-5 h-5 opacity-90" />
             </div>

@@ -5,7 +5,7 @@ const ContactHero = () => {
   return (
     <>
       <section className="w-full relative">
-        <div className="w-full h-[30vh] sm:h-[40vh] lg:h-[65vh] relative">
+        <div className="w-full h-[40vh] sm:h-[40vh] lg:h-[65vh] relative">
           <img
             src={HeroImg}
             alt="Property Banner"

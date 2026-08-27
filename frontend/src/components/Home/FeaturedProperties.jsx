@@ -3,6 +3,7 @@ import PropertyCard from "../../components/Common/PropertiesCard";
 import { NavLink } from "react-router-dom";
 import { useWishlist } from "../../hooks/useWishlist";
 import Loading from "../Common/Loading";
+import { ArrowRight } from "lucide-react";
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "";
 
@@ -56,12 +57,12 @@ const FeaturedProperties = () => {
   return (
     <section className="max-w-7xl mx-auto">
       <div className="mb-8 text-center flex  items-center justify-between">
-        <h2 className="text-3xl font-bold text-gray-100">
+        <h2 className="text-xl lg:text-3xl font-semibold text-gray-100">
           Featured{" "}
-          <span className="italic text-[#f59e0b]">Luxury Properties</span>{" "}
+          <span className="italic text-[#f59e0b]">Luxury  Properties</span>{" "}
         </h2>
-        <NavLink to="/properties" className="text-[#f59e0b] underline mt-2">
-          View All Properties
+        <NavLink to="/properties" className="text-[#f59e0b] flex items-center justify-center gap-2  text-xs lg:text-sm underline mt-2">
+          View All  <ArrowRight size={14} />
         </NavLink>
       </div>
 

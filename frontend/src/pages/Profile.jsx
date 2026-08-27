@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import ProfileSidebar from "../components/Profile/ProfileSidebar";
 import ProfileStats from "../components/Profile/ProfileStats";
 import ProfileBioCard from "../components/Profile/ProfileBioCard";
@@ -12,6 +13,7 @@ const Profile = () => {
   const [activeTab, setActiveTab] = useState("dashboard");
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchUserProfile = async () => {
@@ -19,19 +21,28 @@ const Profile = () => {
         const res = await axios.get("/api/auth/me", {
           withCredentials: true,
         });
-        setUser(res.data?.success ? res.data.user : null);
+        if (res.data?.success && res.data.user) {
+          setUser(res.data.user);
+        } else {
+          navigate("/signin", { replace: true });
+        }
       } catch (error) {
         console.error("Error fetching user profile:", error);
+        navigate("/signin", { replace: true });
       } finally {
         setLoading(false);
       }
     };
 
     fetchUserProfile();
-  }, []);
+  }, [navigate]);
 
   if (loading) {
     return <Loading />;
+  }
+
+  if (!user) {
+    return null;
   }
 
   return (

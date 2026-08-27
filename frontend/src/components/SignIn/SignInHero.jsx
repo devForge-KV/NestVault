@@ -26,7 +26,7 @@ const SignInHero = () => {
   ];
 
   return (
-    <section className="w-full relative h-full min-h-[720px] rounded-[28px] overflow-hidden flex flex-col justify-between p-8 sm:p-12 border border-white/10 shadow-2xl">
+    <section className="w-full relative h-full min-h-[720px] rounded-[28px] overflow-hidden flex flex-col justify-between p-12 sm:p-12 border border-white/10 shadow-2xl">
       <img
         src="https://img.magnific.com/free-photo/luxury-architecture-exterior-design_23-2151920973.jpg?t=st=1787111524~exp=1787115124~hmac=53d456bcabd72c8fab9688f838b98512d660c25bcc1d586aecc96611be788bb7&w=1060"
         alt="NestVault Luxury Real Estate"

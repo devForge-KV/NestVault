@@ -11,7 +11,7 @@ function HomeHero() {
 
   return (
     <section className="w-full relative">
-      <div className="w-full lg:h-[85vh] h-[45vh] relative">
+      <div className="w-full lg:h-[85vh] h-[55vh] relative">
         {}
         <img
           src={HeroBnr}
@@ -55,7 +55,7 @@ function HomeHero() {
             </p>
 
             {}
-            <div className="flex flex-wrap items-center gap-4 sm:gap-6 md:gap-8 mt-1 sm:mt-2">
+            <div className="flex flex-wrap items-center gap-4 sm:gap-6 md:gap-8 mt-4 sm:mt-2">
               {statsData.map((stat) => (
                 <div key={stat.id} className="flex items-center gap-2 sm:gap-3">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-xl sm:rounded-2xl border border-[#d4af37]/40 bg-[#111111]/70 backdrop-blur-md flex items-center justify-center shrink-0">
