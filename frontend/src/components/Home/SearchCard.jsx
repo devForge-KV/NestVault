@@ -45,7 +45,7 @@ const SearchCard = () => {
   };
 
   return (
-    <div className="absolute inset-x-0  bottom-30 lg:-bottom-15 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="relative z-10 -mt-16 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:absolute lg:inset-x-0 lg:-bottom-16 lg:mt-0">
       <div className="bg-[#0a0c10]/80 backdrop-blur-md border border-gray-800 rounded-2xl p-4 sm:p-6 shadow-2xl">
         {}
         <div className="flex items-center justify-between border-b border-gray-800/80 pb-3 mb-5">

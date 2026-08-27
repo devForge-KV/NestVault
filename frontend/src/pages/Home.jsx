@@ -11,7 +11,7 @@ const Home = () => {
     <>
       <HomeHero />
       <SearchCard />
-      <div className="lg:mt-40 mt-75  px-4">
+      <div className="lg:mt-40 mt-6 px-4">
         <FeatureBar />
       </div>
       <div className="lg:mt-15 mt-10 px-4">
